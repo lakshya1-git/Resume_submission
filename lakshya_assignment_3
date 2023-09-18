@@ -1,0 +1,123 @@
+1. After each stride-2 conv, why do we double the number of filters?
+
+Ans 1- 
+def alphabet_soup(input_str):
+    sorted_str = ''.join(sorted(input_str))
+    return sorted_str
+
+# Examples
+print(alphabet_soup("hello"))       
+print(alphabet_soup("edabit"))     
+print(alphabet_soup("hacker"))      
+print(alphabet_soup("geek"))        # ➞ "eegk"
+print(alphabet_soup("javascript"))  # ➞ "aacijprstv"
+
+
+2. Why do we use a larger kernel with MNIST (with simple cnn) in the first conv?
+Ans 2 - Using a larger kernel in the first convolutional layer when working with the MNIST dataset, or any image dataset, can be beneficial for several reasons:  Feature Extraction   , Reducing Dimensionality     , Global Features & Model Capacity
+
+3.What data is saved by ActivationStats for each layer?
+Ans 3 - ActivationStats class in deep learning frameworks like PyTorch or TensorFlow is typically used for monitoring and analyzing various statistics related to the activations (outputs) of each layer in a neural network during training or inference. 
+
+4. How do we get a learner&#39;s callback after they&#39;ve completed training?
+Ans 4 - Below is the python code-
+import torch
+
+class MyCallback:
+    def __init__(self):
+        self.finished_training = False
+
+    def on_training_complete(self):
+        self.finished_training = True
+    
+model = torch.nn.Linear(10, 1)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+callback = MyCallback()
+def forward_hook(module, input, output):
+    if callback.finished_training:
+        callback.on_training_complete()
+
+hook_handle = model.register_forward_hook(forward_hook)
+
+5.What are the drawbacks of activations above zero?
+Ans 5 -  Here the reason bullet points -
+1. Dead Neurons
+2. Gradient Explosion
+3. Non - Smoothness
+4/ Limites Activation Range
+5. Snsitivity to initialization
+6. Not suitable for All Data
+7/ Dying ReLus in Deep Networks
+8. Vanisihing Gradients with Relu
+
+6.Draw up the benefits and drawbacks of practicing in larger batches?
+Ans 6 -
+Practicing with larger batches in deep learning has its own set of benefits and drawbacks. The choice of batch size depends on various factors, including the dataset, hardware, and the specific problem you are working on. Here are the benefits and drawbacks of practicing with larger batches:
+
+Benefits of Larger Batches:
+
+Faster Training: Training with larger batches can be significantly faster, especially on hardware that is optimized for parallel processing (e.g., GPUs). This is because processing multiple data points in parallel can exploit the hardware's computational power more efficiently.
+
+Better Hardware Utilization: GPUs are designed to handle large batches efficiently. Using larger batches allows you to fully utilize the computational power of modern GPUs, resulting in faster training times.
+
+Reduced Overhead: A larger batch size can reduce the overhead associated with data loading and preprocessing. This is especially important when dealing with complex data pipelines or when the data loading process is a bottleneck.
+
+Smoothing Gradients: Larger batches can provide more stable and smoother gradients during training. This can result in faster convergence and better generalization in some cases.
+
+Improved Generalization: In some cases, larger batches may lead to better generalization. This effect is observed when the noise introduced by smaller batches is reduced, allowing the model to focus on more consistent patterns in the data.
+
+7.Why should we avoid starting training with a high learning rate?
+Ans 7 - 
+ere are some reasons why it's advisable to start with a lower learning rate and potentially increase it gradually:
+
+Divergence: 
+
+Instability: 
+
+Failure to Converge:
+
+Skipping Optima:
+
+Overfitting
+
+Unpredictable Behavior: Training with high learning rates can produce unpredictable behavior. Small perturbations in the input data or the order of training samples can lead to different outcomes, making training less reproducible and harder to debug.
+
+To address these issues, it is common practice to start training with a lower learning rate and potentially use learning rate schedules or techniques like learning rate annealing, learning rate warm-up, or adaptive learning rates (e.g., Adam optimizer) to gradually adjust the learning rate during training. This allows the model to start with stable and controlled updates, enabling it to explore the parameter space more effectively and converge to a better solution.
+
+
+8. What are the pros of studying with a high rate of learning?
+Ans 8 - 
+
+Here are some of the pros of studying with a high rate of learning:
+
+Efficient Knowledge Acquisition:
+
+Time Savings:
+
+Increased Motivation:
+
+Enhanced Memory Retention:
+
+Improved Problem-Solving Skills:
+
+Adaptability: 
+
+Competitive Advantage: 
+
+Enhanced Self-Efficacy: 
+
+Flexibility:
+
+Continuous Improvement
+
+9. Why do we want to end the training with a low learning rate?
+
+Ans 9- Here is the bullet point -
+Ending training with a low learning rate stabilizes convergence.
+It prevents overshooting and promotes fine-tuning.
+Low learning rates improve generalization and final performance.
+Helps avoid getting stuck in suboptimal solutions.
+Increases robustness and consistency in training.
+Reduces the risk of overfitting in the late stages of training.
+Provides a smoother path to convergence.
+Allows the model to focus on refining its performance.
