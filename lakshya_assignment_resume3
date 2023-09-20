@@ -1,0 +1,1 @@
+After each stride-2 conv, why do we double the number of filters?
