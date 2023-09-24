@@ -1,0 +1,89 @@
+Ques 1. What is the difference between TRAINABLE and NON-TRAINABLE PARAMETERS?
+Ans 1 .
+Trainable and non-trainable parameters are terms 
+commonly used in machine learning, especially in the context of deep learning neural networks. They refer to different types of model parameters that play distinct 
+roles during the training and inference phases of a machine learning model. Here's the difference between trainable and non-trainable parameters:
+
+Trainable Parameters:
+
+Trainable parameters, also known as learnable parameters or weights, are the elements of a machine learning model that are adjusted or learned during the training process.
+Non-trainable Parameters:
+
+Non-trainable parameters, also known as fixed parameters or hyperparameters, are values or settings that are not learned from the data during training but are
+set before the 
+training process begins.
+
+Ques 2 .In the CNN architecture, where does the DROPOUT LAYER go?
+Ans 2. The purpose of the Dropout layer is to reduce overfitting by randomly setting a fraction of the neurons' outputs to zero during each training batch. 
+This helps prevent the network from relying too heavily on any individual neuron or 
+feature and encourages the network to learn more robust representations.
+
+Here's a typical placement of the Dropout layer in a CNN architecture:
+
+Convolutional and Pooling Layers: The initial layers of a CNN usually consist of convolutional and pooling layers. These layers are responsible for extracting 
+hierarchical features from the input data.
+
+Flattening Layer: After the convolutional and pooling layers, the data is often flattened into a 1D vector to be fed into fully connected layers.
+
+Fully Connected Layers: Fully connected layers are used to make predictions or classifications based on the features extracted by the earlier layers. Dropout is 
+typically applied to these fully connected layers.
+
+Dropout Layer: The Dropout layer is placed after one or more fully connected layers. It randomly sets a fraction of the neurons' outputs to zero during each training 
+batch. This fraction, often denoted as the dropout rate, is a hyperparameter that you can adjust. Common values for the dropout rate are between 0.2 and 0.5.
+
+Output Layer: Finally, after the Dropout layer, you may have an output layer, which depends on the specific task you're working on. For classification tasks, 
+it could be a softmax layer for multi-class classification or a sigmoid layer for binary classification.
+
+QUes 3 . What is the optimal number of hidden layers to stack?
+Ans 3 .
+here is no one-size-fits-all answer to this question, and determining the right architecture often involves experimentation and tuning. However, here are some guidelines and considerations:
+
+Start Simple: When building a neural network, it's often a good practice to start with a simple architecture and then gradually increase the complexity if necessary. Begin with a single hidden layer and see how well the model performs. For some simple tasks, a single layer might be sufficient.
+
+Depth and Width: The architecture of a neural network can be adjusted in terms of depth (number of hidden layers) and width (number of neurons in each layer). Deeper networks tend to capture more complex features but are also more prone to overfitting, especially if you have limited data. Wider networks can also capture complex features but may require more data.
+
+Use Case Matters: The optimal architecture depends on the specific use case. For relatively straightforward problems, a shallow network may suffice. However, for tasks involving complex patterns or large datasets, deeper networks with more hidden layers may be beneficial.
+
+Regularization: Deeper networks are more likely to overfit, so it's important to use regularization techniques like dropout, batch normalization, and weight decay to prevent overfitting when you have a deeper architecture.
+
+Vanishing and Exploding Gradients: Very deep networks can suffer from vanishing or exploding gradient problems during training. Techniques like skip connections (residual networks or "ResNets") and gradient clipping can help mitigate these issues.
+
+Transfer Learning: For some tasks, you can leverage pre-trained models, like those in the field of transfer learning (e.g., using pre-trained models like VGG, Inception, or BERT as a starting point) and fine-tune them on your specific task. This can reduce the need for designing very deep architectures from scratch.
+
+Validation and Cross-Validation: Use validation and cross-validation techniques to evaluate different architectures. Monitor metrics like validation loss and accuracy to determine which architecture performs best on your validation dataset.
+
+Computational Resources: Deeper networks generally require more computational resources for training. Ensure that you have the hardware (e.g., GPUs or TPUs) and time available to train and tune deeper architectures.
+
+Ensemble Methods: Instead of relying solely on a very deep network, you can also consider ensemble methods. Ensemble models combine predictions from multiple models, which can improve performance and robustness.
+
+
+Ques 4 - In each layer, how many secret units or filters should there be?
+ANs 4 - The number of units or filters in each layer of a neural network, including convolutional layers in convolutional neural networks (CNNs) or neurons in fully connected layers,
+is a crucial hyperparameter that significantly impacts the network's capacity, learning ability, and generalization
+
+QUes    5. What should your initial learning rate be?
+Ans 5.
+Choosing the initial learning rate is a crucial hyperparameter when training machine learning models, especially neural networks. The optimal initial learning rate can vary depending on the specific model architecture, dataset, and
+optimization algorithm you are using.And it should be determined through experimentation and careful monitoring. Starting with a conservative value and gradually adjusting it based on the model's performance is a common approach to finding an appropriate learning rate for your specific task.
+
+6. What do you do with the activation function?
+Answer 6 . 
+The activation function is a crucial component of artificial neural networks, including deep learning models like Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs). Activation functions introduce non-linearity into the model, allowing neural networks to approximate complex, 
+non-linear relationships within data. 
+
+Ques  7. What is NORMALIZATION OF DATA?
+ANs 7.
+Normalization of data, also known as data scaling or feature scaling, is a preprocessing technique used in statistics and machine learning to transform the values of different features (or variables) to a common scale without distorting the differences in the range of values. The goal of normalization is to make it easier for machine learning algorithms to learn patterns
+from the data and to ensure that no particular feature dominates the learning process due to its larger scale. 
+
+Ques 8. What is DECLINE IN LEARNING RATE?
+Ans 8 . A decline in learning rate, often referred to as learning rate decay or learning rate annealing, is a strategy used in 
+machine learning and deep learning to adjust the learning rate during the training process. The learning rate is a hyperparameter that determines
+the step size by which the model's parameters (weights and biases) are updated during gradient-based optimization, such as stochastic
+gradient descent (SGD). Learning rate decay involves reducing the learning rate over time as the optimization progresses.
+
+Ques 9. What does EARLY STOPPING CRITERIA mean?
+Ans 9 .
+Early stopping criteria is a technique used in machine learning, especially during the training of iterative algorithms like neural networks, to prevent overfitting and improve the efficiency of model training. It involves monitoring a certain metric (usually a validation or test set performance metric)
+during training and stopping the training process when this metric stops improving or starts deteriorating. 
+
