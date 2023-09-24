@@ -1,0 +1,90 @@
+Ques 1 -What is the COVARIATE SHIFT Issue, and how does it affect you?
+ANs 1-
+Covariate shift is a concept in machine learning and statistics that refers to a situation where the distribution of the input (features or covariates) in the training data is different from the distribution in the test data.
+In other words, it occurs when the relationships between the input variables and the target variable change between the training and testing phases. 
+
+Ques 2 - What is the process of BATCH NORMALIZATION?
+Ans 2 - Key benefits of batch normalization:
+
+Improved Training Stability: Batch normalization helps mitigate issues like vanishing and exploding gradients, allowing for more stable and faster training of deep neural networks.
+
+Faster Convergence: By normalizing the activations, batch normalization can lead to faster convergence during training, reducing the number of epochs required to reach a certain level of performance.
+
+Regularization Effect: Batch normalization introduces a form of regularization, which can help prevent overfitting, especially when used in conjunction with dropout or other regularization techniques.
+
+Generalization: Models with batch normalization tend to generalize better to unseen data, as the normalization process reduces the sensitivity to small changes in the input distribution.
+
+QUes 3 - Using our own terms and diagrams, explain LENET ARCHITECTURE.
+
+Ans 3 - Here's a simplified explanation using our own terms and a basic diagram:
+
+LeNet Architecture:
+
+LeNet consists of several layers, including:
+
+Input Layer: This layer takes in grayscale images of handwritten digits (e.g., 28x28 pixels).
+
+Convolutional Layers: LeNet starts with two convolutional layers. These layers use small filters to scan the input image, capturing features like edges and patterns.
+
+Pooling Layers: After each convolutional layer, there's a pooling (subsampling) layer. This layer reduces the spatial dimensions of the features while retaining important information.
+
+Fully Connected Layers: Following the convolutional and pooling layers, there are a couple of fully connected layers. These layers act like traditional neural network layers, connecting every neuron to every neuron in the previous and subsequent layers.
+
+Output Layer: The final layer produces the network's output, which represents the probabilities of the input image belonging to each digit class (0-9).
+
+Ques 4 -Using our own terms and diagrams, explain ALEXNET ARCHITECTURE.
+Ans 4 - AlexNet comprises several layers, and it played a crucial role in popularizing deep learning for computer vision tasks. Here's an overview:
+
+Input Layer: This layer takes in color images (e.g., 224x224 pixels) with three color channels (RGB).
+
+Convolutional Layers: AlexNet starts with five convolutional layers. These layers use small filters to scan the input image, capturing various features, from simple edges to complex patterns.
+
+Pooling Layers: After each convolutional layer, there are pooling (subsampling) layers. These layers reduce the spatial dimensions of the features while retaining essential information.
+
+Normalization Layers: AlexNet includes local response normalization layers after some of the convolutional layers. These layers help with generalization by normalizing neuron activations within a local region.
+
+Fully Connected Layers: Following the convolutional and pooling layers, there are three fully connected layers. These layers act like traditional neural network layers, connecting every neuron to every neuron in the previous and subsequent layers.
+
+Dropout Layers: AlexNet uses dropout layers in the fully connected layers to prevent overfitting. Dropout randomly deactivates some neurons during training, promoting better generalization.
+
+Output Layer: The final layer produces the network's output, representing the probabilities of the input image belonging to various classes (e.g., object categories in image classification).
+
+Ques 5 - Describe the vanishing gradient problem.
+Ans 5 - 
+The vanishing gradient problem is a challenge that can occur during the training of deep neural networks, particularly deep feedforward neural networks and recurrent neural networks (RNNs). It's characterized by the gradients of the loss function with respect to the model's parameters 
+becoming very small (close to zero) as they are backpropagated from the output layer to the earlier layers of the network during training.
+
+Ques 6 - What is NORMALIZATION OF LOCAL RESPONSE?
+Ans 6 - Normalization of local response, often referred to as Local Response Normalization (LRN), is a technique used in convolutional neural networks (CNNs) and neural networks to normalize the responses of neurons in a specific region (or local neighborhood) of an image or feature map. It is a type of normalization that
+enhances the ability of neural networks to model complex patterns in the data. 
+
+QUes 7 - In AlexNet, what WEIGHT REGULARIZATION was used?
+ANs  7 -
+In the original AlexNet architecture, weight regularization was applied in the form of L2 weight decay (also known as weight regularization or weight penalty). L2 weight decay involves adding a term to the loss function during training that penalizes large weights. 
+This encourages the model to have smaller and more evenly distributed weights, which helps prevent overfitting.
+
+QUes 8 - Using our own terms and diagrams, explain VGGNET ARCHITECTURE.
+ANs 8 -
+VGGNet, also known as the VGG (Visual Geometry Group) architecture, is a deep 
+convolutional neural network (CNN) architecture known for its simplicity and effectiveness in image classification tasks.''
+
+Ques 9 - Describe VGGNET CONFIGURATIONS.
+ANs 9 - 
+he VGGNet architecture consists of several configurations, each with a different depth, that were proposed and evaluated in the original VGG paper by 
+the Visual Geometry Group at the University of Oxford. 
+Key characteristics and common features of VGGNet configurations:
+
+Uniform Architecture: VGGNet is known for its uniform architecture, where convolutional layers use small 3x3 filters with a stride of 1 and padding to maintain spatial dimensions. Max-pooling layers (2x2) follow each convolutional block.
+ReLU Activation: Rectified Linear Units (ReLU) are used as activation functions after each convolutional and fully connected layer.
+Fully Connected Layers: Both VGG16 and VGG19 have three fully connected layers at the end of the network, which gradually reduce the spatial dimensions until the final output layer.
+Weight Decay: L2 weight decay (weight regularization) is typically applied to mitigate overfitting.
+
+Ques 10 -What regularization methods are used in VGGNET to prevent overfitting?
+Ans 10-
+In the VGGNet architecture, particularly VGG16 and VGG19, weight regularization in the form of L2 weight decay is commonly used as a regularization method to prevent overfitting. Weight decay (also known as weight 
+regularization or weight penalty) encourages the model to have smaller and more evenly distributed weights, which helps reduce overfitting.
+Here's how weight decay regularization is applied in VGGNet:
+
+L2 Weight Decay
+Regularization Strength
+Effect on Training
